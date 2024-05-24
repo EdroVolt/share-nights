@@ -4,21 +4,28 @@ Share Nights is a [Next.js](https://nextjs.org/) application that provides a coo
 
 ## Getting Started
 
-Before starting, ensure you are using Node.js version 18.17 or higher.
+Before starting, ensure you are using Node.js version 19.
 
-1. Install the required dependencies by running the following command in the root folder:
+1. Use the following command to install and use it.
+
+    ```bash
+    nvm install
+    nvm use
+    ```
+
+2. Install the required dependencies by running the following command in the root folder:
 
     ```bash
     npm install
     ```
 
-2. Run the development server:
+3. Run the development server:
 
     ```bash
     npm run dev
     ```
 
-3. Open [http://localhost:3000](http://localhost:3000) with your browser to view the app.
+4. Open [http://localhost:3000](http://localhost:3000) with your browser to view the app.
 
 ## Note
 
