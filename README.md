@@ -27,6 +27,30 @@ Before starting, ensure you are using Node.js version 19.
 
 4. Open [http://localhost:3000](http://localhost:3000) with your browser to view the app.
 
+## Tests
+
+The project is using [jest](https://jestjs.io/) for unit testing
+
+to run tests use the following command
+
+```bash
+    npm test
+```
+
+in dev mode us the following command for hot reload test running
+
+```bash
+    npm run test:watch
+```
+
+### test coverage
+
+To get the test coverage run the following command:
+
+```bash
+    npm run test:coverage
+```
+
 ## Note
 
 The app is still under development. If you'd like to contribute, don't hesitate to open a pull request.
