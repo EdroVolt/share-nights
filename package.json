@@ -9,8 +9,7 @@
     "lint": "next lint",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage",
-    "deploy": "vercel deploy"
+    "test:coverage": "jest --coverage"
   },
   "dependencies": {
     "@vercel/speed-insights": "^1.0.11",
