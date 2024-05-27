@@ -9,9 +9,11 @@
     "lint": "next lint",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "deploy": "vercel deploy"
   },
   "dependencies": {
+    "@vercel/speed-insights": "^1.0.11",
     "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18"
