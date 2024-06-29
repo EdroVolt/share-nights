@@ -1,5 +1,7 @@
 # Share Nights
 
+![GitHub Actions](https://github.com/EdroVolt/share-nights/actions/workflows/build-and-deploy-docker-image.action.yml/badge.svg)
+
 Share Nights is a [Next.js](https://nextjs.org/) application that provides a cool, interactive, and fun way to share your favorite shows and movies with your friends.
 
 ## Getting Started
