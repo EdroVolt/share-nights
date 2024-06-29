@@ -22,15 +22,15 @@ jobs:
         with:
           node-version: 20
       - name: install Next app dependancies
-        uses: "npm install"
+        run: "npm install"
       - run: echo "💡 The ${{ github.ref_name }} dependancies has been installed."
       - name: Run linter
-        uses: "npm run lint"
+        run: "npm run lint"
       - name: Run tests
-        uses: "npm run test"
+        run: "npm run test"
       - run: echo "💡 Building the project..."
       - name: Building the project
-        uses: "npm run build"
+        run: "npm run build"
       - run: echo "🍏 The testing/building job's status is ${{ job.status }}."
 
   building-and-deploying-docker-image:
