@@ -29,6 +29,47 @@ Before starting, ensure you are using Node.js version 19.
 
 4. Open [http://localhost:3000](http://localhost:3000) with your browser to view the app.
 
+> ###  Using [Ansible](https://www.ansible.com/)
+
+
+- **1.** Clone the repo.
+
+- **2.** cd to the project directory.
+
+- **3.** Open your terminal and make sure you are in the project root directory.
+
+- **4.** Run the following command to create a python [venv](https://docs.python.org/3/library/venv.html):
+
+    ```bash
+    python3 -m venv ansible-env
+    ```
+
+- **5.** Activate the virtual environment:
+
+    ```bash
+    source ansible-env/bin/activate
+    ```
+
+- **6.** Install Ansible and required dependencies:
+
+    ```bash
+    pip install ansible
+    pip install requests
+    ansible-galaxy collection install community.docker
+    ```
+
+- **7.** Run the playbook within the virtual environment:
+
+    ```bash
+    ansible-playbook site.yml --ask-become-pass
+    ```
+
+You will see something like this:
+
+![ansible terminal logs](docs/images/image.png)
+
+> After the ansible done it's job you can access the app on [http://localhost:3000](http://localhost:3000)
+
 ## Tests
 
 The project is using [jest](https://jestjs.io/) for unit testing
