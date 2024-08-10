@@ -1,0 +1,56 @@
+---
+- name: Deploy share-nights app using Docker
+  hosts: webservers
+  become: true
+
+  vars:
+    docker_image: "edrovolt/share-nights:latest"
+    container_name: "share-nights"
+    container_port: 3000
+    host_port: 3000
+
+  tasks:
+    - name: Ensure Docker is installed
+      ansible.builtin.package:
+        name: docker
+        state: present
+
+    - name: Start Docker service
+      ansible.builtin.service:
+        name: docker
+        state: started
+        enabled: true
+
+    - name: Pull share-nights Docker image from DockerHub
+      community.docker.docker_image:
+        name: "edrovolt/share-nights"
+        source: pull
+
+    - name: Remove any existing container with the same name
+      community.docker.docker_container:
+        name: "share-nights"
+        state: absent
+        force_kill: true
+
+    - name: Run share-nights container
+      community.docker.docker_container:
+        name: "share-nights"
+        image: "edrovolt/share-nights"
+        state: started
+        ports:
+          - "3000:3000"
+        restart_policy: always
+
+    - name: Ensure the share-nights app is running
+      community.docker.docker_container_info:
+        name: "share-nights"
+      register: container_info
+
+    - name: Debug container info
+      ansible.builtin.debug:
+        var: container_info
+
+    - name: Check if the container is running
+      ansible.builtin.fail:
+        msg: "share-nights container is not running"
+      when: container_info.container.State.Status != "running"
