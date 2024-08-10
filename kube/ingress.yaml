@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: share-nights
+  namespace: share-nights-namespace
+  labels:
+    name: share-nights
+spec:
+  rules:
+  - host: edrovolt.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: share-nights
+            port: 
+              number: 80

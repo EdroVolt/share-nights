@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: share-nights
+  namespace: share-nights-namespace
+spec:
+  selector:
+    app: share-nights
+  type: NodePort
+  ports:
+  - port: 3000
+    targetPort: 3000

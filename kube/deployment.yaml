@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: share-nights
+  namespace: share-nights-namespace
+spec:
+  selector:
+    matchLabels:
+      app: share-nights
+  template:
+    metadata:
+      labels:
+        app: share-nights
+    spec:
+      containers:
+      - name: share-nights
+        image: edrovolt/share-nights
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 3000
